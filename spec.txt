@@ -1,0 +1,27 @@
+[SHT2x Driver - Design spec]
+[About] 
+A driver package for PXT Makecode Microbit to use the SHT2x sensors:
+SHT20, SHT21, SHT21 Humidity/Sensors sensors.
+
+[Design]
+read_humidity() - Reads relative humidity from the sensor, return in int as %RH
+read_tempreture() - Reads temperature from the sensor, return float as degree C\
+
+[Implementation]
+Interacting SHM2x involves the I2C interface via an certain 7 bit address, 
+I2c address for SHT2x: 0x40 - according to data sheet
+    (not entirely sure how that address thing works, apprently the reference 
+    code uses 0x80 which requires 8 bits).
+
+I2C command codes: 
+    - Trigger Temprature sensor - 0xE3
+    - Trigger Relative Humidity sensor - 0xE5
+    - Trigger Temprature sensor (non master holding) - 0xF3
+    - Trigger Relative Humidity sensor (non master holding) - 0xF6
+    
+Output Format
+    - 3 bytes in length
+        - data1 - data2 - checksum < discard checksum if possible
+        - last 2 bits are status bit - clear before converting
+    - Temperature in C = -46.85 + 177.72 * data / 2^16
+    - Relative Humidity in %RH = -6 + 125 * data / 2^16
