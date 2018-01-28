@@ -1,22 +1,20 @@
 {
-    "name": "sht21_driver",
-    "version": "0.0.0",
-    "description": "Support for the SHT21 Digital Humidity Sensor",
+    "name": "sht2x_driver",
+    "version": "0.0.1",
+    "description": "Support for the SHT2x Digital Humidity Sensor",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
-        "main.ts",
-        "extension.cpp",
-        "extension.ts",
+        "driver.h",
+        "driver.cpp",
+        "driver.ts",
         "shims.d.ts",
         "enums.d.ts"
     ],
     "testFiles": [
-        "test.ts"
     ],
     "public": false
 }

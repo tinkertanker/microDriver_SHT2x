@@ -3,7 +3,7 @@
 using namespace pxt;
 using namespace SHT2xDriver;
 
-/* Write given command to SHT2x, returning the reply recieved, -1 on error
+/* Write given command to SHT2x, returning the reply recieved, <0 on error
  * Actual data size 8bit - 14bit, depending on command */
 int16_t read_sht2x(SHTCommand cmd)
 {
@@ -28,7 +28,7 @@ int16_t read_sht2x(SHTCommand cmd)
         fiber_sleep(30);
     }
 
-    //Read Failure: Sensor took too long to respond
+    //Read Failure: No response from sensor before timeout
     return -1;
         
 }
@@ -37,7 +37,7 @@ double read_humidity()
 {
     MicroBit uBit;
     int16_t read_rst = read_sht2x(sht_command_humidity);
-    if(read_rst == -1) uBit.panic(SHT2X_PANIC_CODE);
+    if(read_rst < 0) uBit.panic(SHT2X_PANIC_CODE);
     
 
     return SHT_CONV_HUMID((uint16_t)read_rst);
@@ -48,7 +48,7 @@ double read_temperture()
 {
     MicroBit uBit;
     int16_t read_rst = read_sht2x(sht_command_temperture);
-    if(read_rst == -1) uBit.panic(SHT2X_PANIC_CODE);
+    if(read_rst < 0) uBit.panic(SHT2X_PANIC_CODE);
     
     return SHT_CONV_HUMID((uint16_t)read_rst);
 }

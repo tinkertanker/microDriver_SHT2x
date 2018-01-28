@@ -1,6 +1,7 @@
-# sht21_driver
+# SHT2X Driver
 
-Support for the SHT21 Digital Humidity Sensor
+Support driver/makecode package for the SHT2x Digital Humidity Sensor, 
+to use oin the microbit
 
 ## TODO
 
