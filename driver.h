@@ -6,7 +6,7 @@
 #include <stddef.h>
 #include "pxt.h"
 
-//#define DEBUG 1
+#define DEBUG 1
 
 /* DEBUG PRINT */
 #ifdef DEBUG
@@ -36,9 +36,9 @@ namespace SHT2xDriver
     */
     typedef enum sht_command_t
     {
-        sht_command_temperture_hold = 0xE3,
+        sht_command_temperature_hold = 0xE3,
         sht_command_humidity_hold  = 0xE5,
-        sht_command_temperture = 0xF3,
+        sht_command_temperature = 0xF3,
         sht_command_humidity = 0xF5
     }SHTCommand;
     
@@ -46,9 +46,9 @@ namespace SHT2xDriver
     //%
     int read_humidity();
 
-    /* Read temperture from the sensor in degree's celcius*/
+    /* Read temperature from the sensor in degree's celcius*/
     //%
-    int read_temperture();
+    int read_temperature();
 }
 
 #endif /* ifndef SHT2x_DRIVER_H */

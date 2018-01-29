@@ -1,7 +1,7 @@
 # microDriver - SHT2X 
 ---
 MicroBit driver for SHT20, SHT21, SHT25 digital sensor, enabliing the the 
-microbit to obtain temperture or relative humidity from these sensors. The 
+microbit to obtain temperature or relative humidity from these sensors. The 
 driver comes in both C++ library and a makecode package for use on the 
 [Makecode Microbit Editor](makecode.microbit.org).
 
@@ -17,8 +17,8 @@ driver comes in both C++ library and a makecode package for use on the
 First ensure that the sensor is _connected properly_ to the MicroBit's I2c pins.
 
 This package/library provides:
-1. `read_temperture()` - Read ambient tempreture
-    * reads the temperture from the sensor.
+1. `read_temperature()` - Read ambient tempreture
+    * reads the temperature from the sensor.
     * returns the tempreture as an integer in degree celcius
 2. `read_humidity()` - - Read ambient relative humidity
     * reads the relative humidity from the sensor.

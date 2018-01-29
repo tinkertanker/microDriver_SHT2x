@@ -48,7 +48,6 @@ namespace SHT2xDriver
 
     int read_humidity()
     {
-        MicroBit uBit;
         uint16_t read_rst = read_sht2x(sht_command_humidity);
         int humidity = (int) SHT_CONV_HUMID(read_rst);
         
@@ -59,13 +58,13 @@ namespace SHT2xDriver
     }
 
 
-    int read_temperture()
+    int read_temperature()
     {
-        uint16_t read_rst = read_sht2x(sht_command_temperture);
-        int temperture = (int) SHT_CONV_TEMP(read_rst);
-        dprintf("read_temperture(): Calculated Temperture: %d dg C\r\n", \
-            temperture);
+        uint16_t read_rst = read_sht2x(sht_command_temperature);
+        int temperature = (int) SHT_CONV_TEMP(read_rst);
+        dprintf("read_temperature(): Calculated temperature: %d dg C\r\n", \
+            temperature);
 
-        return temperture;
+        return temperature;
     }
 }

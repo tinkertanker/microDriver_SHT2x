@@ -20,12 +20,12 @@ namespace SHT2xDriver {
 
     /**
      * Read Temperature in degrees celcius from the SHT2x sensor.
-     * @return number describing the ambient temperture in degrees celcius
+     * @return number describing the ambient temperature in degrees celcius
     */
-    //% shim=SHT2xDriver::read_temperture
+    //% shim=SHT2xDriver::read_temperature
     //% blockId="SHT2xDriver_read_temperature"
-    //% block="read temperture"
-    export function read_temperture(){
+    //% block="read temperature"
+    export function read_temperature(){
         // Dummy implementation for the simulator.
         console.log("Simulate: Read Temperature from SHT2x sensor: 50");
         return 30.0;
