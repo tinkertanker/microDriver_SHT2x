@@ -1,18 +1,33 @@
-# SHT2X Driver
+# microDriver - SHT2X 
+---
+MicroBit driver for SHT20, SHT21, SHT25 digital sensor, enabliing the the 
+microbit to obtain temperture or relative humidity from these sensors. The 
+driver comes in both C++ library and a makecode package for use on the 
+[Makecode Microbit Editor](makecode.microbit.org).
 
-Support driver/makecode package for the SHT2x Digital Humidity Sensor, 
-to use oin the microbit
+## Setup
+1. Library Version
+    * Include `driver.h` for the defintions.
+    * Compile you program with `driver.c`.
+2. Makecode Version
+    * Navigate to **Add Package** and enter this repository's URL.
+    * Select this package from the results.
 
-## TODO
+## Usage
+First ensure that the sensor is _connected properly_ to the MicroBit's I2c pins.
 
-- [ ] Add a reference for your blocks here
-- [ ] Add "icon.png" image (300x200) in the root folder
-- [ ] Add "- beta" to the GitHub project description if you are still iterating it.
-- [ ] Turn on your automated build on https://travis-ci.org
-- [ ] Use "pxt bump" to create a tagged release on GitHub
-- [ ] Get your package reviewed and approved https://makecode.microbit.org/packages/approval
+This package/library provides:
+1. `read_temperture()` - Read ambient tempreture
+    * reads the temperture from the sensor.
+    * returns the tempreture as an integer in degree celcius
+2. `read_humidity()` - - Read ambient relative humidity
+    * reads the relative humidity from the sensor.
+    * returns the relative humidity in as a integer percentage.
 
-Read more at https://makecode.microbit.org/packages/build-your-own
+## Troubleshooting
+1. MicroBit panics _(displays a frowning face) with an error code of 80.
+    * The driver was unable to read from the sensor. Check whether the sensor
+        is connected properly.
 
 ## License
 
@@ -22,4 +37,3 @@ MIT
 
 * for PXT/microbit
 (The metadata above is needed for package search.)
-
