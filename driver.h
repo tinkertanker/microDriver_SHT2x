@@ -6,6 +6,18 @@
 #include <stddef.h>
 #include "pxt.h"
 
+#define DEBUG 1
+
+/* DEBUG PRINT */
+#ifdef DEBUG
+#define dprint(msg) uBit.serial.printf("DEBUG: %d: %s: %s\r\n",__LINE__,__func__,msg)
+#define dprintf(...) uBit.serial.printf("DEBUG: " __VA_ARGS__)
+#else
+#define dprint(msg)
+#define dprintf(...)
+// ^^ Empty Define ^^
+#endif /* DEBUG PRINT */
+
 /* Address for talking to i2c */
 #define SHT2X_I2C_ADDR 0x40
 
@@ -35,4 +47,5 @@ namespace SHT2xDriver
     /* Read tempreture from the sensor in degree's celcius*/
     double read_tempreture();
 }
+
 #endif /* ifndef SHT2x_DRIVER_H */
