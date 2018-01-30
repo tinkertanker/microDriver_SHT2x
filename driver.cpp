@@ -5,6 +5,7 @@ using namespace pxt;
 namespace SHT2xDriver
 {
     static MicroBit uBit;
+    static int sht_i2c_address = SHT2X_I2C_ADDR_DEFAULT;
 
     /* Write given command to SHT2x, returning the reply recieved, <0 on error
      * Actual data size 8bit - 14bit, depending on command */
@@ -12,7 +13,7 @@ namespace SHT2xDriver
     {
         MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 
-        if(i2c.write(SHT2X_I2C_ADDR, (const char *)&cmd, sizeof(uint8_t) * 1)\
+        if(i2c.write(sht_i2c_address, (const char *)&cmd, sizeof(uint8_t) * 1)\
                 != MICROBIT_OK)
         {
             dprint("Failed to write command to SHT2x");
@@ -25,7 +26,7 @@ namespace SHT2xDriver
         uint16_t reply = 0;
         for(int i = 0; i < 4; i ++)
         {
-            if(i2c.read(SHT2X_I2C_ADDR, (char *)&read_buf, sizeof(uint16_t) * 1)\
+            if(i2c.read(sht_i2c_address, (char *)&read_buf, sizeof(uint16_t) * 1)\
                     == MICROBIT_OK)
             {
                 //Data Preprocessing
@@ -66,5 +67,13 @@ namespace SHT2xDriver
             temperature);
 
         return temperature;
+    }
+    
+    void set_i2c_address(int address)
+    {
+        if(address < 0 || address > 128) 
+            dprint("Error: set_i2c_address(): Invaild i2c address");
+            
+        sht_i2c_address = address;
     }
 }

@@ -20,7 +20,7 @@
 #endif /* DEBUG PRINT */
 
 /* Address for talking to i2c */
-#define SHT2X_I2C_ADDR 0x80
+#define SHT2X_I2C_ADDR_DEFAULT 0x40
 
 #define SHT2X_PANIC_CODE 80
 
@@ -49,6 +49,10 @@ namespace SHT2xDriver
     /* Read temperature from the sensor in degree's celcius*/
     //%
     int read_temperature();
+    
+    /* Set the i2c address for the SHT2x sensor */
+    //%
+    void set_i2c_address(int address);
 }
 
 #endif /* ifndef SHT2x_DRIVER_H */
