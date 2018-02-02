@@ -1,4 +1,4 @@
-#include "driver.h"
+#include "driver_sht2x.h"
 
 using namespace pxt;
 

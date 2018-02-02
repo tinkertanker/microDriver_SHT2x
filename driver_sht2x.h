@@ -1,7 +1,7 @@
-#ifndef SHT2x_DRIVER_H
-#define SHT2x_DRIVER_H
+#ifndef DRIVER_SHT2X_H
+#define DRIVER_SHT2X_H
 
-#define SHT2x_DRIVER_H
+#define DRIVER_SHT2X_H
 
 #include <stddef.h>
 #include "pxt.h"
@@ -55,4 +55,4 @@ namespace SHT2xDriver
     void set_i2c_address(int address);
 }
 
-#endif /* ifndef SHT2x_DRIVER_H */
+#endif /* ifndef DRIVER_SHT2X_H */

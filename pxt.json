@@ -8,9 +8,9 @@
     },
     "files": [
         "README.md",
-        "driver.h",
-        "driver.cpp",
-        "driver.ts",
+        "driver_sht2x.h",
+        "driver_sht2x.cpp",
+        "driver_sht2x.ts",
         "shims.d.ts",
         "enums.d.ts"
     ],
