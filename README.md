@@ -7,14 +7,15 @@ driver comes in both C++ library and a makecode package for use on the
 
 ## Setup
 1. Library Version
-    * Include `driver.h` for the defintions.
-    * Compile you program with `driver.c`.
+    * Include `driver_sht2x.h` for the defintions.
+    * Compile you program with `driver_sht2x.c`.
 2. Makecode Version
     * Navigate to **Add Package** and enter this repository's URL.
     * Select this package from the results.
 
 ## Usage
 First ensure that the sensor is _connected properly_ to the MicroBit's I2c pins.
+Or the driver will complain with a Microbit panic.
 
 This package/library provides:
 1. `read_temperature()` - Read ambient tempreture
