@@ -8,14 +8,18 @@
     },
     "files": [
         "README.md",
-        "driver_sht2x.h",
-        "driver_sht2x.cpp",
-        "driver_sht2x.ts",
-        "shims.d.ts",
-        "enums.d.ts"
+        "driver_sht2x.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
+    "targetVersions": {
+        "target": "4.0.17",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }
