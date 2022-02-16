@@ -24,10 +24,10 @@ This package/library provides:
 2. `read_humidity()` - - Read ambient relative humidity
     * reads the relative humidity from the sensor.
     * returns the relative humidity in as a integer percentage.
-3.  `set_i2c_address` - Change the i2c address used to address the sensor.
+3.  `set_i2c_address` - Change the i2c address used to address the sensor. By default this is set to `0x40`.
 
 ## Troubleshooting
-1. MicroBit panics _(displays a frowning face) with an error code of 80.
+1. MicroBit panics _(displays a frowning face)_ with an error code of 80.
     * The driver was unable to read from the sensor. Check whether the sensor
         is connected properly.
     * If the sensor is connected properly, the driver is still unable to
