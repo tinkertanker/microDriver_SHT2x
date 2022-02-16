@@ -1,5 +1,7 @@
+serial.setBaudRate(9600);
+SHT2xDriver.set_i2c_address(0x40);
 basic.forever(() => {
-    SHT2xDriver.set_i2c_address(0x80);
-    basic.showString("%RH:" + SHT2xDriver.read_humidity());
-    basic.showString("TMP: " + SHT2xDriver.read_temperature());
+    serial.writeLine("%RH:" + SHT2xDriver.read_humidity());
+    serial.writeLine("TMP: " + SHT2xDriver.read_temperature());
+    basic.pause(2000);
 })

@@ -1,21 +1,25 @@
 {
     "name": "sht2x_driver",
-    "version": "0.0.2",
-    "description": "Support for the SHT2x Digital Humidity Sensor",
+    "version": "1.0.0",
+    "description": "Support for the SHT2x Digital Humidity & Temperature Sensor",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "driver_sht2x.h",
-        "driver_sht2x.cpp",
-        "driver_sht2x.ts",
-        "shims.d.ts",
-        "enums.d.ts"
+        "driver_sht2x.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
+    "targetVersions": {
+        "target": "4.0.17",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }
