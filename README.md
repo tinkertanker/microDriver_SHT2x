@@ -20,7 +20,7 @@ Or the driver will complain with a Microbit panic.
 This package/library provides:
 1. `read_temperature()` - Read ambient tempreture
     * reads the temperature from the sensor.
-    * returns the tempreture as an integer in degree celcius
+    * returns the tempreture as an integer in degree celsius
 2. `read_humidity()` - - Read ambient relative humidity
     * reads the relative humidity from the sensor.
     * returns the relative humidity in as a integer percentage.
