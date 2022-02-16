@@ -26,7 +26,7 @@ namespace SHT2xDriver {
 
     /**
      * Read Temperature in degrees celcius from the SHT2x sensor.
-     * Returns a number describing the ambient temperature in degrees celcius
+     * Returns a number describing the ambient temperature in degrees celsius
     */
     //% blockId="SHT2xDriver_read_temperature"
     //% block="read temperature"
