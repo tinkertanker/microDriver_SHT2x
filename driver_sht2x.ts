@@ -13,7 +13,7 @@ namespace SHT2xDriver {
      * humidity
     */
     //% blockId="SHT2xDriver_read_humidity"
-    //% block="read humidty"
+    //% block="read humidity"
     export function read_humidity(): number {
         pins.i2cWriteNumber(sht_i2c_address, 0xF3, NumberFormat.UInt8LE, false);
         basic.pause(100);
